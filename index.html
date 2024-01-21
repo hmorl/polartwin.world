@@ -1,11 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>polar twin</title>
-</head>
-<body>
-    <h1>polar twin</h1>
-</body>
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <canvas id="background-canvas"></canvas>
+
+    <div class="draggable title">
+      <h1><a href="/">POLAR<br>TWIN</a></h1>
+      <em><a href="/about/">?</a></em>
+    </div>
+
+    <div class="draggable panel lp" id="pt01" style="z-index: 0; top: 200px; left: 600px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=531461154/size=large/bgcol=333333/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/pt01">PT01 by POLAR TWIN</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel lp" id="in-hush-tone" style="z-index: 1; top: 525px; left: 636px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3710845959/size=large/bgcol=333333/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/in-hush-tone">in hush tone by porcelain chambers</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel lp" id="soup-cool-water" style="z-index: 2; top: 36px; left: 817px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=1724570028/size=large/bgcol=333333/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/soup-cool-water">soup : cool water by POLAR TWIN</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel lp" id="cot" style="z-index: 3; top: 239px; left: 159px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=4101493133/size=large/bgcol=333333/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/cot">Cot by POLAR TWIN</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel lp" id="daisy-motif-up" style="z-index: 4; top: 383px; left: 783px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=579228077/size=large/bgcol=333333/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/daisy-motif-up">Daisy Motif Up! by POLAR TWIN</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel lp" id="paf" style="z-index: 5; top: 34px; left: 42px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=3391532928/size=large/bgcol=333333/linkcol=e99708/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/planetary-angler-fish">Planetary Angler Fish by POLAR TWIN</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel lp" id="the-message" style="z-index: 6; top: 506px; left: 91px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=2783244781/size=large/bgcol=333333/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/the-message-ep-2">The Message (EP) by POLAR TWIN</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel lp" id="goes-bucolic" style="z-index: 7; top: 454px; left: 293px;">
+      <iframe src="https://bandcamp.com/EmbeddedPlayer/album=2153105672/size=large/bgcol=333333/linkcol=0687f5/minimal=true/transparent=true/" seamless>
+        <a href="https://polartwin.bandcamp.com/album/goes-bucolic">Goes Bucolic by POLAR TWIN</a>
+      </iframe>
+    </div>
+
+    <div class="draggable panel" id="fred-fest-2023" style="z-index: 8; top: 80px; left: 328px;">
+      <iframe width="300" height="168" src="https://www.youtube-nocookie.com/embed/R2U_nBDeJfU?si=aSQzbgLW-QVaUoVC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        polar twin "LIVE AT FRED FEST" [march 2023]
+      </iframe>
+    </div> 
+
+    <script src="/main.js"></script>
+    <script>
+      voronoi(20,0.3)
+        .luma(0.2)
+        .colorama(0.712)
+        .modulateRotate(shape(1,0.348,0.2))
+        .modulateRotate(shape(3,0.3143,0.18))
+        .modulate(voronoi(800,19,0.8),0.008)
+        .out(o1)
+
+      osc(10,0.01,1)
+        .modulate(noise(3,0))
+        .posterize(20)
+        .add(shape(199,0.223,1)
+        .color(0.7, 0.97, 1, 0.5))
+        .blend(o1, 0.7)
+        .modulateRotate(osc(7,0.001), 3)
+        .modulateKaleid(osc(0.1,0.23,2),9.23)
+        .mult(shape(999,.9,.01)
+          .modulateKaleid(noise(3,0.01)))
+        .blend(
+          src(o1)
+            .luma(0.3)
+            .modulateKaleid(osc(0.09,0.91,0.2))
+            .modulate(o0, 0.34),0.2)
+        .out()
+    </script>
+  </body>
 </html>

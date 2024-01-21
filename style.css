@@ -1,0 +1,117 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+  font-family: "Arial Narrow", "Arial", sans-serif;
+}
+
+a {
+  color: rgb(232, 151, 0);
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration-style: solid;
+}
+
+ul {
+  list-style: georgian;
+  padding-left: 40px;
+}
+
+#background-canvas {
+  background-color: black;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -999;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  -webkit-crisp-edges: pixelated;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: calc(50vh - 100px);
+  left: calc(50vw - 100px);
+
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+
+  z-index: 999;
+
+  cursor: move;
+
+  font-size: 36px;
+
+  background-color: rgba(210, 210, 230, 0.7);
+  background-image: radial-gradient(rgb(82, 91, 251) 10%, transparent 70%);
+}
+
+.title h1 {
+  color: black;
+  font-size: inherit;
+  line-height: 1em;
+  margin: 0;
+  text-align: center;
+}
+
+.title h1 a {
+  color: black;
+}
+
+.title a {
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus-visible {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 1px;
+}
+
+.panel {
+  position: absolute;
+  border: 1px dashed rgba(251, 251, 160, 0.7);
+  padding: 20px;
+  margin: 0;
+  border-radius: 20px;
+  cursor: move;
+  color: white;
+  max-width: 300px;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.panel iframe {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 200px;
+  height: 200px;
+}

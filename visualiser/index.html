@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <canvas id="background-canvas"></canvas>
+
+    <div class="draggable title">
+      <h1><a href="/">POLAR<br>TWIN</a></h1>
+      <em><a href="/about/">?</a></em>
+    </div>
+
+    <script src="/main.js"></script>
+
+    <script>
+      voronoi(20,0.3)
+	      .modulateRotate(osc(7,0.001),3)
+        .modulateKaleid(osc(90,0.0003,0.9),3)
+	      .thresh(0.75)
+        .colorama(0.02)
+	      .out()
+    </script>
+  </body>
+</html>

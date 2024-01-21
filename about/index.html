@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/hydra-synth"></script>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <canvas id="background-canvas"></canvas>
+
+    <div class="draggable title">
+      <h1><a href="/">POLAR<br>TWIN</a></h1>
+      <em><a href="/about/">?</a></em>
+    </div>
+
+    <div class="draggable panel" style="z-index: 99; top: 83px; left: 267px;">
+      <p>?</p>
+      <p>polar twin is a music project based in london + brighton, steered by <a href="https://harrymorley.net">harry morley</a> + <a href="https://icebeing.com">luke phillips</a></p>
+
+      <p>it's mostly fog folk + ambient</p>
+    </div>
+
+    <div class="draggable panel" style="z-index: 99; top: 424px; left: 85px;">
+      <p>@</p>
+      <ul>
+        <li><a href="https://polartwin.bandcamp.com">bandcamp</a></li>
+        <li><a href="https://instagram.com/polartwinofficial/">instagram</a></li>
+        <li><a href="https://li.sten.to/polar-twin">li.sten.to</a></li>
+      </ul>
+    </div>
+
+    <div class="draggable panel" style="z-index: 99; top: 112px; left: 810px;">
+      <p>&</p>
+      <p><a href="https://polartwin.bandcamp.com/contact?b=1974887423&n=POLAR%20TWIN">get in touch</a> for bookings, remixes & collabs</p>
+    </div>
+
+    <div class="draggable panel" style="z-index: 99; top: 325px; left: 413px;">
+      <p>^ ~~~?</p>
+      <p><a href="/visualiser">Click here!</a></p>
+    </div>
+
+    <div class="draggable panel" style="top: 187px; left: 921px;">
+      <img src="/img/lost-lands.png" alt="" width="200px">
+    </div>
+
+    <div class="draggable panel" style="top: 410px; left: 202px;">
+      <img src="/img/lost-lands-2.png" alt="" width="250px">
+    </div>
+
+    <div class="draggable panel" style="top: 460px; left: 613px;">
+      <img src="/img/pt-square.png" alt="" width="250px">
+    </div>
+
+    <div class="draggable panel" style="top: 48px; left: 547px;">
+      <img src="/img/pt-ep.png" alt="" width="250px">
+    </div>
+
+    <div class="draggable panel" style="top: 132px; left: 124px;">
+      <img src="/img/purple.png" alt="" width="250px">
+    </div>
+
+    <script src="/main.js"></script>
+    <script>
+      voronoi(20,0.3)
+	      .modulateRotate(osc(7,0.001),3)
+        .modulateKaleid(osc(90,0.0003,0.9),3)
+	      .thresh(0.75)
+        .colorama(0.02)
+	      .out()
+    </script>
+  </body>
+</html>
